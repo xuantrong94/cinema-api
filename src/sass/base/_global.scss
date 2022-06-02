@@ -1,0 +1,46 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  line-height: 1.3rem;
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  font-size: $mb-headings;
+}
+
+h3 {
+  font-size: $mb-subheadings;
+}
+
+p {
+  font-size: $mb-txt;
+}
+
+.grid {
+  display: grid;
+}
+
+@each $val in $numbers {
+  .grid-col-#{$val} {
+    grid-template-columns: repeat($val, 1fr);
+  }
+}
+
+@each $val in $numbers {
+  .grid-col-md-#{$val} {
+    @include tablet {
+      grid-template-columns: repeat($val, 1fr);
+    }
+  }
+}
+
+@each $val in $numbers {
+  .grid-col-sm-#{$val} {
+    @include mobile {
+      grid-template-columns: repeat($val, 1fr);
+    }
+  }
+}

@@ -1,0 +1,25 @@
+@mixin flex($justify-content, $align-items) {
+  display: flex;
+  justify-content: $justify-content; //* Vertical
+  align-items: $align-items; //* Horizontal
+}
+
+@mixin container-self-align($left, $top) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  transform: translate(calc($left * -1), calc($top * -1));
+}
+
+//* 0 (mobile) tl-width (tablet) dt-width (desktop)
+@mixin tablet {
+  @media only screen and (min-width: $tl-width) {
+    @content; //todo Apply when > width
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: $dt-width) {
+    @content; //todo Apply when > width
+  }
+}
